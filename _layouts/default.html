@@ -7,82 +7,70 @@
 
     <div class="row">
       <div class="large-12 large-centered columns">
-
         <header class="masthead">
           <img src="{{ site.baseurl }}/public/profile.jpeg" alt="Achyudh Ram">
         </header>
-
-    </div>
-  </div>
-
-  <div class="row">
-
-    <div class="large-6 large-offset-3 columns">
-
-      <div class="content-section">
-          
-        <p>    
-            Hi! I am <b>Achyudh Ram</b>, a Software Development Engineer for Amazon in Toronto. I have an M.Math. in Computer Science from the University of Waterloo, where I worked with the <a href="http://dsg.uwaterloo.ca/">Data Systems Group</a> and the <a href="http://www.swag.uwaterloo.ca/">Software Analytics Group</a>; more on my <a href="https://drive.google.com/file/d/1m3Y8iPBQlmzOOKjJCxyXJCR0mdQcIb4d/view?usp=sharing">resume</a>.
-        </p>
-
-        <p>
-            I am interested in building intelligent and scalable software systems by bringing together diverse fields such as deep learning, information retrieval and distributed systems. I write about some of the interesting aspects of my research in <a href="https://achyudh.github.io/blog">my blog</a>.
-        </p>
-
       </div>
+    </div>
 
-      <main>
-          <h2>Publications</h2>
+    <div class="row">
+      <div class="large-6 large-offset-3 columns">
+        <div class="content-section">
+          <p>
+              Hi! I am <b>Achyudh Ram</b>, a Software Development Engineer working on improving demand forecasting and solving supply chain challenges at Amazon.
+          </p>
+          <p>
+              I have an M.Math. in Computer Science from the University of Waterloo, where I worked with the <a href="https://uwaterloo.ca/data-systems-group/">Data Systems Group</a> and the <a href="https://swag.uwaterloo.ca/">Software Analytics Group</a>; more on my <a href="https://drive.google.com/file/d/1VMNfPiLbvFlfr6zZ3-eR0Hv82RniS9W2/view?usp=sharing">resume</a>.
+          </p>
+        </div>
+
+        <main>
+            <h2>Publications</h2>
+            {% for post in site.posts %}
+              {% if post.pub == 1 %}
+                <div class="project-post">
+                  <h3><a href="{{ post.git }}">{{ post.title }}</a></h3>
+                  {{ post.content }}
+                </div>
+              {% endif %}
+            {% endfor %}
+        </main>
+
+        <br>
+
+        <main>
+          <h2>Recent projects</h2>
           {% for post in site.posts %}
-            {% if post.pub == 1 %}
+            {% if post.pub == 0 %}
               <div class="project-post">
                 <h3><a href="{{ post.git }}">{{ post.title }}</a></h3>
                 {{ post.content }}
               </div>
             {% endif %}
           {% endfor %}
-      </main>
+        </main>
 
-      <br>      
-
-      <main>
-        <h2>Recent projects</h2>
-        {% for post in site.posts %}
-          {% if post.pub == 0 %}
-            <div class="project-post">
-              <h3><a href="{{ post.git }}">{{ post.title }}</a></h3>
-              {{ post.content }}
-            </div>
-          {% endif %}
-        {% endfor %}
-      </main>
-
-      <footer>
-        <h2>Get in touch!</h2>
-
-        <p>
-        Drop me an <a href="mailto:achyudhk@live.com?Subject=Hello%20Achyudh!">email</a> or add me on <a href="https://www.linkedin.com/in/achyudh">LinkedIn</a>.
-        </p>        
-        <br>
-          <img src="/public/lambda.png" height=2em>
-        <p class="copyright">
-            &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
+        <footer>
+          <h2>Get in touch!</h2>
+          <p>
+            Drop me an <a href="mailto:arkeshav@uwaterloo.ca?Subject=Hello%20Achyudh!">email</a> or add me on <a href="https://www.linkedin.com/in/achyudh">LinkedIn</a>.
           </p>
-      </footer>
+          <br>
+            <img src="/public/lambda.png" height=2em>
+            <p class="copyright">
+              &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. All rights reserved.
+            </p>
+        </footer>
+      </div>
 
+      <div class="large-2 large-offset-1 columns social">
+        <ul>
+          <li><a href="https://github.com/achyudh"><i class="fa fa-github"></i></a></li>
+          <li><a href="https://linkedin.com/in/achyudh"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="mailto:arkeshav@uwaterloo.ca?Subject=20Achyudh%Hello!"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </div>
     </div>
-
-    <div class="large-2 large-offset-1 columns social">
-      <ul>
-        <li><a href="https://github.com/achyudh"><i class="fa fa-github"></i></a></li>
-        <li><a href="https://linkedin.com/in/achyudh"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://twitter.com/achyudh"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="https://medium.com/@achyudh"><i class="fa fa-medium"></i></a></li>
-        <li><a href="mailto:arkeshav@uwaterloo.ca?Subject=Hello%20Achyudh!"><i class="fa fa-envelope"></i></a></li>                
-      </ul>
-    </div>
-
-  </div>
 
     {% if site.google_analytics %}
      <script>
