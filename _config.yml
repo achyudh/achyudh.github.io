@@ -1,10 +1,7 @@
-# Permalinks
-permalink:           achyudhk
-
 # Setup
 title:               Achyudh Ram
 tagline:             Software Development Engineer
-url:                 http://achyudh.github.io
+url:                 https://achyudh.me
 baseurl:             ""
 
 # Assets
@@ -16,15 +13,8 @@ sass:
 # About/contact
 author:
   name:              Achyudh Ram
-  url:               https://twitter.com/achyudh
+  url:               https://achyudh.me
   email:             arkeshav@uwaterloo.ca
-
-# Custom vars
-version:             1.0.0
-github:
-  repo:              https://github.com/achyudh
-google_analytics:    UA-107933392-1
-github:              achyudh
 
 # Gems
 gems:
