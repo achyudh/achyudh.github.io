@@ -1,3 +1,3 @@
 # Personal Website
 
-Visit me at https://achyudh.github.io!
+Visit me at https://achyudh.me!
